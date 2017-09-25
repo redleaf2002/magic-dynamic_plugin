@@ -1,12 +1,15 @@
 # magic-dynamic_plugin
 
-主要提供了下面三个用途 1. 方便的加载jar文件   2. 动态加载带有资源文件的apk  主要满足换皮肤需求  3. 加载apk 满足动态加载activity和service的需求
+主要提供了下面三个用途 
+1. 动态加载jar文件   
+2. 动态加载带有资源文件的apk  主要满足换皮肤需求  
+3. 加载apk 满足动态加载activity和service的需求
 
 ## 特点
 只需要把magic_plugin.jar文件放入lib目录下面 直接方便
 
 ## 使用:
-### 1.增加权限
+#### 增加权限
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -90,8 +93,10 @@ mImage.setImageResource(R.drawable.image_girl);
 #### 2. 宿主端
 
 ##### 1. 在maniefst中
+```java
 <activity android:name="com.magic.plugin.proxy.PluginProxyActivity"/>
 <service android:name="com.magic.plugin.proxy.PluginProxyService"/>
+```
 
 ##### 2. 实例： 直接在宿主中启动一个activity
 
