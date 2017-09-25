@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/PluginDemo.iml" filepath="$PROJECT_DIR$/PluginDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apkpluginclient/apkpluginclient.iml" filepath="$PROJECT_DIR$/apkpluginclient/apkpluginclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dynamicclient/dynamicclient.iml" filepath="$PROJECT_DIR$/dynamicclient/dynamicclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/magicplugin/magicplugin.iml" filepath="$PROJECT_DIR$/magicplugin/magicplugin.iml" />
+    </modules>
+  </component>
+</project>

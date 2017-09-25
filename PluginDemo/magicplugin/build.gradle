@@ -1,0 +1,52 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    provided 'com.android.support:appcompat-v7:25.1.0'
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+}
+
+task clearJar(type: Delete) {
+    delete('libs/magic_plugin.jar')
+}
+
+task makeJar(type: org.gradle.api.tasks.bundling.Jar) {
+//indique the name of jar
+    baseName 'magic_plugin'
+//pack the dir of classes
+    from('build/intermediates/classes/release/com/magic/plugin/')
+//the dir after being packed
+    into('com/magic/plugin')
+//remove the extra classes
+    exclude('text/', 'Dynamic.class', 'R.class', 'BuildConfig.class')
+//remove the file with the head 'R$'
+    exclude { it.name.startsWith('R$'); }
+}
